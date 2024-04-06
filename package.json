@@ -8,7 +8,7 @@
     "lib": "lib/"
   },
   "scripts": {
-    "build": "rm -rf lib && npm run build:cjs && npm run build:esm",
+    "build": "node clean.js lib && npm run build:cjs && npm run build:esm",
     "build:cjs": "babel src --out-dir lib",
     "build:esm": "cross-env BABEL_ENV=esm babel src --out-dir lib/esm",
     "prepare": "npm run build",
