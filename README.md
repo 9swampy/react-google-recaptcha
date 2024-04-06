@@ -49,6 +49,7 @@ Properties used to customise the rendering:
 | onErrored | func | *optional* callback when the challenge errored, most likely due to network issues. |
 | onExpired | func | *optional* callback when the challenge is expired and has to be redone by user. By default it will call the onChange with null to signify expired callback. |
 | sitekey | string | The API client key |
+| data-action | string | Data-action may only contain only alphanumeric characters, slashes, and underscores. Data-action must not be user-specific. It is important to check the action returned in the verify response. |
 | size | enum | *optional* `compact`, `normal` or `invisible`. This allows you to change the size or do an invisible captcha |
 | stoken | string | *optional* set the stoken parameter, which allows the captcha to be used from different domains, see [reCAPTCHA secure-token] |
 | tabindex | number | *optional* The tabindex on the element *(__default:__ `0`)*
@@ -66,6 +67,7 @@ The component instance also has some utility functions that can be called. These
   - need to call when using `"invisible"` reCAPTCHA - [example below](#invisible-recaptcha)
 - `executeAsync()` programmatically invoke the challenge and return a promise that resolves to the token or errors(if encountered).
   - alternative approach to `execute()` in combination with the `onChange()` prop - [example below](#invisible-recaptcha)
+- `getValue()` *after* the user completes the reCAPTCHA challenge programmatically get the token response for the reCAPTCHA widget.
 
 Example:
 ```javascript
