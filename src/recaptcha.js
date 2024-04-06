@@ -99,8 +99,7 @@ export default class ReCAPTCHA extends React.Component {
   explicitRender() {
     const render = this.getCaptchaFunction("render");
     if (render && this._widgetId === undefined) {
-      const wrapper = document.createElement("div");
-      this._widgetId = render(wrapper, {
+      this._widgetId = render(this.captcha, {
         sitekey: this.props.sitekey,
         callback: this.handleChange,
         theme: this.props.theme,
@@ -113,8 +112,8 @@ export default class ReCAPTCHA extends React.Component {
         hl: this.props.hl,
         badge: this.props.badge,
         isolated: this.props.isolated,
+        "data-action": this.props.dataAction,
       });
-      this.captcha.appendChild(wrapper);
     }
     if (this._executeRequested && this.props.grecaptcha && this._widgetId !== undefined) {
       this._executeRequested = false;
@@ -173,6 +172,7 @@ ReCAPTCHA.propTypes = {
   hl: PropTypes.string,
   badge: PropTypes.oneOf(["bottomright", "bottomleft", "inline"]),
   isolated: PropTypes.bool,
+  dataAction: PropTypes.string,
 };
 ReCAPTCHA.defaultProps = {
   onChange: () => {},
