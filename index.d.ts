@@ -135,5 +135,5 @@ export interface ReCAPTCHAProps
      * Data-action may only contain only alphanumeric characters, slashes, and underscores. 
      * Data-action must not be user-specific. It is important to check the action returned 
      * in the verify response. */
-    dataAction: string | undefined;
+    "data-action": string | undefined;
 }
