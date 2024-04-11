@@ -1,7 +1,6 @@
 import * as React from "react";
 
 export default ReCAPTCHA;
-export { ReCAPTCHA };
 
 declare class ReCAPTCHA extends React.Component<ReCAPTCHAProps> {
     /**

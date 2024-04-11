@@ -1,7 +1,7 @@
 import * as React from "react";
 import PropTypes from "prop-types";
 
-export default class ReCAPTCHA extends React.Component {
+export default class RecaptchaComponent extends React.Component {
   constructor() {
     super();
     this.handleExpired = this.handleExpired.bind(this);
@@ -157,8 +157,8 @@ export default class ReCAPTCHA extends React.Component {
   }
 }
 
-ReCAPTCHA.displayName = "ReCAPTCHA";
-ReCAPTCHA.propTypes = {
+RecaptchaComponent.displayName = "ReCAPTCHA";
+RecaptchaComponent.propTypes = {
   sitekey: PropTypes.string.isRequired,
   onChange: PropTypes.func,
   grecaptcha: PropTypes.object,
@@ -174,7 +174,7 @@ ReCAPTCHA.propTypes = {
   isolated: PropTypes.bool,
   dataAction: PropTypes.string,
 };
-ReCAPTCHA.defaultProps = {
+RecaptchaComponent.defaultProps = {
   onChange: () => {},
   theme: "light",
   type: "image",

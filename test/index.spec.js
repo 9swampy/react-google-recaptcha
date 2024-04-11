@@ -1,6 +1,6 @@
 import React from "react";
 import { render } from "@testing-library/react";
-import ReCAPTCHA from "../src/recaptcha-wrapper";
+import ReCAPTCHA from "../src/index";
 
 const VALUE = "some value";
 const WIDGET_ID = "someWidgetId";
